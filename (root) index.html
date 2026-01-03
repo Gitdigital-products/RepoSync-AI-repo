@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RepoSync AI • GitDigital Products</title>
+
+  <!-- GitDigital Products Design System -->
+  <link rel="stylesheet" href="assets/css/gdp-design-system.css" />
+  <!-- App-specific styling -->
+  <link rel="stylesheet" href="assets/css/reposync-ai.css" />
+</head>
+
+<body class="gdp-theme-dark">
+  <header class="gdp-header">
+    <div class="gdp-header-inner">
+      <div class="gdp-header-brand">
+        <span class="gdp-logo-dot"></span>
+        <span class="gdp-logo-text">GitDigital Products</span>
+      </div>
+      <nav class="gdp-nav">
+        <a href="#overview" class="gdp-nav-link">Overview</a>
+        <a href="#projects" class="gdp-nav-link">Project Cards</a>
+        <a href="/docs/" class="gdp-nav-link">Docs</a>
+      </nav>
+      <button class="gdp-button gdp-button-ghost" id="themeToggle">
+        Toggle theme
+      </button>
+    </div>
+  </header>
+
+  <main class="gdp-main">
+    <section id="overview" class="gdp-section gdp-section-hero">
+      <div class="gdp-section-content">
+        <h1 class="gdp-heading-hero">RepoSync AI</h1>
+        <p class="gdp-text-lead">
+          Automated repository synchronization for governance, CI/CD, and documentation —
+          keeping your GitDigital Products organization aligned and audit‑ready.
+        </p>
+        <div class="gdp-cta-row">
+          <a href="/docs/" class="gdp-button gdp-button-primary">View Documentation</a>
+          <a href="https://github.com/Gitdigital-products/reposync-ai" class="gdp-button gdp-button-secondary" target="_blank">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="highlights" class="gdp-section">
+      <div class="gdp-section-content">
+        <h2 class="gdp-heading-section">Core capabilities</h2>
+        <div class="gdp-grid gdp-grid-3">
+          <article class="gdp-card">
+            <h3 class="gdp-card-title">Governance sync</h3>
+            <p class="gdp-card-body">
+              Keep README, SECURITY, CODEOWNERS, and policy files consistent across every repo in your org.
+            </p>
+          </article>
+          <article class="gdp-card">
+            <h3 class="gdp-card-title">CI/CD baselines</h3>
+            <p class="gdp-card-body">
+              Enforce shared workflow templates and coverage standards so every service ships with the same guarantees.
+            </p>
+          </article>
+          <article class="gdp-card">
+            <h3 class="gdp-card-title">Org‑wide intelligence</h3>
+            <p class="gdp-card-body">
+              Centralize rules in one config hub and let RepoSync AI propagate changes safely and transparently.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="gdp-section gdp-section-alt">
+      <div class="gdp-section-content">
+        <div class="gdp-section-header-row">
+          <h2 class="gdp-heading-section">Project cards</h2>
+          <span class="gdp-pill">Auto‑generated</span>
+        </div>
+        <p class="gdp-text-muted">
+          These cards are generated on page load from a simple config object. Later you can swap this for GitHub API data.
+        </p>
+
+        <div id="projectCardGrid" class="gdp-grid gdp-grid-3 gdp-grid-responsive">
+          <!-- Cards will be injected by reposync-ai.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gdp-footer">
+    <div class="gdp-footer-inner">
+      <span class="gdp-text-muted">
+        GitDigital Products • RepoSync AI • © 2026
+      </span>
+      <a href="https://github.com/Gitdigital-products" target="_blank" class="gdp-footer-link">
+        GitHub Organization
+      </a>
+    </div>
+  </footer>
+
+  <script src="assets/js/design-system.js"></script>
+  <script src="assets/js/reposync-ai.js"></script>
+</body>
+</html>
