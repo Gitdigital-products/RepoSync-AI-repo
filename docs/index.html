@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RepoSync AI Docs • GitDigital Products</title>
+
+  <link rel="stylesheet" href="../assets/css/gdp-design-system.css" />
+  <style>
+    .docs-layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 2rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+
+    .docs-nav {
+      border-right: 1px solid var(--gdp-color-border);
+      padding-right: 1rem;
+    }
+
+    .docs-nav-section-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gdp-color-text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .docs-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+    }
+
+    .docs-nav-link {
+      display: block;
+      padding: 0.25rem 0;
+      font-size: 0.9rem;
+      color: var(--gdp-color-text-muted);
+      text-decoration: none;
+    }
+
+    .docs-nav-link--active {
+      color: var(--gdp-color-accent);
+    }
+
+    .docs-content h1 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .docs-badge {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--gdp-color-border);
+      padding: 0.15rem 0.5rem;
+      color: var(--gdp-color-text-muted);
+    }
+
+    .docs-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .docs-section {
+      margin-bottom: 2rem;
+    }
+
+    .docs-section h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .docs-section p {
+      font-size: 0.95rem;
+      color: var(--gdp-color-text-muted);
+    }
+
+    .docs-section ol,
+    .docs-section ul {
+      font-size: 0.95rem;
+      color: var(--gdp-color-text-muted);
+    }
+
+    @media (max-width: 800px) {
+      .docs-layout {
+        display: block;
+      }
+      .docs-nav {
+        border-right: none;
+        border-bottom: 1px solid var(--gdp-color-border);
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="gdp-theme-dark">
+  <header class="gdp-header">
+    <div class="gdp-header-inner">
+      <div class="gdp-header-brand">
+        <span class="gdp-logo-dot"></span>
+        <span class="gdp-logo-text">GitDigital Products • Docs</span>
+      </div>
+      <nav class="gdp-nav">
+        <a href="/" class="gdp-nav-link">Back to app</a>
+      </nav>
+      <button class="gdp-button gdp-button-ghost" id="themeToggle">
+        Toggle theme
+      </button>
+    </div>
+  </header>
+
+  <main class="docs-layout">
+    <aside class="docs-nav">
+      <div class="docs-nav-section">
+        <div class="docs-nav-section-title">Getting started</div>
+        <ul class="docs-nav-list">
+          <li><a href="#introduction" class="docs-nav-link docs-nav-link--active">Introduction</a></li>
+          <li><a href="#requirements" class="docs-nav-link">Requirements</a></li>
+          <li><a href="#installation" class="docs-nav-link">Installation</a></li>
+        </ul>
+      </div>
+
+      <div class="docs-nav-section">
+        <div class="docs-nav-section-title">Concepts</div>
+        <ul class="docs-nav-list">
+          <li><a href="#sync-model" class="docs-nav-link">Sync model</a></li>
+          <li><a href="#safety" class="docs-nav-link">Safety & dry runs</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="docs-content">
+      <div class="docs-meta-row">
+        <h1>RepoSync AI</h1>
+        <span class="docs-badge">Preview docs</span>
+      </div>
+      <p class="gdp-text-muted">
+        RepoSync AI keeps your GitDigital Products organization aligned by synchronizing governance files, workflows,
+        and documentation baselines from a central source of truth.
+      </p>
+
+      <div id="introduction" class="docs-section">
+        <h2>Introduction</h2>
+        <p>
+          Use RepoSync AI when you want to guarantee that every repository in your organization shares
+          the same minimum governance, security documentation, and CI/CD structure.
+        </p>
+      </div>
+
+      <div id="requirements" class="docs-section">
+        <h2>Requirements</h2>
+        <ul>
+          <li>GitHub organization with admin access</li>
+          <li>GitHub App or PAT with permissions to read/write contents & workflows</li>
+          <li>A central configuration repository (for example, <code>config-hub</code>)</li>
+        </ul>
+      </div>
+
+      <div id="installation" class="docs-section">
+        <h2>Installation</h2>
+        <ol>
+          <li>Install the RepoSync AI GitHub App into your organization.</li>
+          <li>Configure the list of target repositories and template paths in your config hub.</li>
+          <li>Run an initial dry run to inspect the proposed changes.</li>
+        </ol>
+      </div>
+
+      <div id="sync-model" class="docs-section">
+        <h2>Sync model</h2>
+        <p>
+          RepoSync AI uses a “central definition, local application” pattern: templates are defined once,
+          then applied to each eligible repository with org‑specific rules and guards.
+        </p>
+      </div>
+
+      <div id="safety" class="docs-section">
+        <h2>Safety & dry runs</h2>
+        <p>
+          Every sync operation can be executed in dry‑run mode, producing a report of pending changes before
+          any commits are written. This is useful for audits and for gradual rollout across teams.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gdp-footer">
+    <div class="gdp-footer-inner">
+      <span class="gdp-text-muted">
+        GitDigital Products • RepoSync AI Docs • © 2026
+      </span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/design-system.js"></script>
+</body>
+</html>
