@@ -1,0 +1,11 @@
+reposync-ai/
+├─ index.html
+├─ assets/
+│  ├─ css/
+│  │  ├─ gdp-design-system.css
+│  │  └─ reposync-ai.css
+│  └─ js/
+│     ├─ design-system.js
+│     └─ reposync-ai.js
+└─ docs/
+   └─ index.html
