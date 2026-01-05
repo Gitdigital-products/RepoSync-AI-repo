@@ -1,0 +1,2 @@
+- name: Code Review GPT
+  uses: mattzcarey/shippie@v0.20.0
