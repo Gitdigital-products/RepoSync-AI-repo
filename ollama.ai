@@ -5,7 +5,9 @@ from azure.core.credentials import AzureKeyCredential
 
 endpoint = "https://models.github.ai/inference"
 model = "meta/Llama-4-Scout-17B-16E-Instruct"
-token = os.environ[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]
+token = os.environ.get("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")
+if token is None:
+    raise RuntimeError("Required environment variable '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' is not set")
 
 client = ChatCompletionsClient(
     endpoint=endpoint,
