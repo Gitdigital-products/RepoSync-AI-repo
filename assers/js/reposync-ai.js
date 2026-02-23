@@ -38,7 +38,7 @@
 
   function statusToPill(status) {
     const lower = (status || "").toLowerCase();
-    let label = "Unknown";
+    let label;
     let modifierClass = "";
     switch (lower) {
       case "active":
